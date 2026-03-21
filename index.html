@@ -8,62 +8,60 @@
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
             margin: 0; padding: 0; 
-            background: #000;
+            background-color: #000;
+            background-image: url('band.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
             color: #fff; 
             line-height: 1.6; text-align: center;
         }
-        
-        .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('band.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 4rem 1rem;
-        }
 
-        /* Mobile Fix for Background */
+        /* Mobile specific background settings to force the image to fit */
         @media (max-width: 768px) {
-            .hero-bg {
-                background-size: contain; /* Forces image to fit width without cropping */
+            body {
+                background-size: contain;
+                background-repeat: no-repeat;
                 background-position: top center;
-                padding: 2rem 1rem;
+                background-attachment: scroll;
             }
         }
 
         nav { padding: 2rem 0; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(0,0,0,0.8); }
         nav a { color: #fff; text-decoration: none; margin: 0 1rem; }
         
-        .hero { padding: 2rem 1rem; }
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; font-weight: 800; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .hero p { font-size: 1rem; color: #eee; max-width: 600px; margin: 0 auto 2rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+        .hero { padding: 6rem 2rem; background: rgba(0,0,0,0.4); }
+        .hero h1 { font-size: 4rem; margin-bottom: 1rem; font-weight: 800; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.2rem; color: #eee; max-width: 600px; margin: 0 auto 2rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
         
         .btn { 
             display: inline-block; padding: 0.8rem 2.5rem; background: #fff; color: #000; 
             text-decoration: none; font-weight: 600; text-transform: uppercase;
-            letter-spacing: 0.05em; font-size: 0.9rem; margin-top: 1rem; border: none;
+            letter-spacing: 0.05em; font-size: 0.9rem; margin-top: 1rem;
         }
         
         /* Sections */
-        .section-solid { padding: 3rem 1rem; max-width: 800px; margin: 1rem auto; background: #111; border-radius: 4px; border: 1px solid #333; }
-        h2 { font-size: 1.3rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5rem; }
+        .section-solid { padding: 4rem 2rem; max-width: 800px; margin: 2rem auto; background: rgba(0,0,0,0.8); border-radius: 4px; border: 1px solid #333; }
+        h2 { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2rem; }
         
         /* Music Section */
-        .music-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-        .music-card { padding: 1.5rem; background: #222; border-radius: 4px; }
-        .listen-btn { display: inline-block; padding: 0.6rem 1.2rem; border: 1px solid #fff; color: #fff; text-decoration: none; margin-top: 0.5rem; font-size: 0.7rem; text-transform: uppercase; }
+        .music-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+        .music-card { padding: 2rem; background: #111; border-radius: 4px; }
+        .listen-btn { display: inline-block; padding: 0.8rem 1.5rem; border: 1px solid #fff; color: #fff; text-decoration: none; margin-top: 1rem; font-size: 0.8rem; text-transform: uppercase; }
         
         /* Merch Section */
-        .merch-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; justify-items: center; }
-        .merch-item { background: #222; padding: 1rem; border-radius: 4px; border: 1px solid #333; width: 90%; }
+        .merch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; justify-items: center; }
+        .merch-item { background: #111; padding: 1rem; border-radius: 4px; border: 1px solid #333; }
         .merch-item img { max-width: 100%; height: auto; border-radius: 4px; margin-bottom: 1rem; }
 
         /* Tour */
-        .tour-list { text-align: left; max-width: 500px; margin: 0 auto; list-style: none; padding: 0; font-size: 0.9rem; }
-        .tour-list li { margin: 0.8rem 0; border-bottom: 1px solid #333; padding-bottom: 0.5rem; display: flex; justify-content: space-between; }
+        .tour-list { text-align: left; max-width: 600px; margin: 0 auto; list-style: none; padding: 0; }
+        .tour-list li { margin: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 0.5rem; display: flex; justify-content: space-between; }
         
-        input { padding: 0.8rem; width: 90%; max-width: 300px; display: block; margin: 1rem auto; border: 1px solid #555; background: #222; color: #fff; }
+        input { padding: 1rem; width: 100%; max-width: 400px; display: block; margin: 1rem auto; border: 1px solid #fff; box-sizing: border-box; background: rgba(255,255,255,0.1); color: #fff; }
         
-        footer { text-align: center; padding: 3rem 1rem; background: #000; font-size: 0.8rem; color: #888; }
+        footer { text-align: center; padding: 4rem 2rem; margin-top: 2rem; font-size: 0.9rem; color: #ccc; background: rgba(0,0,0,0.8); }
     </style>
 </head>
 <body>
@@ -71,17 +69,16 @@
         Small Town Radio | <a href="#music">Music</a> | <a href="#about">Bio</a> | <a href="#shows">Shows</a> | <a href="#merch">Merch</a> | <a href="#contact">Contact</a>
     </nav>
     
-    <div class="hero-bg">
-        <section class="hero">
-            <h1>Small Town, Big Sound.</h1>
-            <p>Classic hits to modern pop—rock-ified with our own twist.</p>
-            <a href="#music" class="btn">Listen Now</a>
-        </section>
-    </div>
+    <section class="hero">
+        <h1>Small Town, Big Sound.</h1>
+        <p>Classic hits to modern pop—rock-ified with our own twist.</p>
+        <a href="#music" class="btn">Listen Now</a>
+    </section>
 
     <section id="about" class="section-solid">
         <h2>About Us</h2>
-        <p>What happens when you take the classic rock you love and fuse it with the pop energy of today? You get Small town radio. Based out of Greenfield, MA, we pride ourselves on a unique approach to live music—taking songs you think you know by heart and giving them a fresh, rock-ified identity.</p>
+        <p>Small town radio: Your local soundtrack, reimagined.</p>
+        <p>What happens when you take the classic rock you love and fuse it with the pop energy of today? You get Small town radio. Based out of Greenfield, MA, we pride ourselves on a unique approach to live music—taking songs you think you know by heart and giving them a fresh, rock-ified identity. Between our unique mashups and our own original compositions, we aim to bridge the gap between old-school grit and modern groove. We’re here to play the music you didn’t know you needed to hear, played the way it was meant to be felt: live, loud, and inspired.</p>
     </section>
 
     <section id="music" class="section-solid">
@@ -105,17 +102,17 @@
     <section id="shows" class="section-solid">
         <h2>Tour Dates</h2>
         <ul class="tour-list">
-            <li><span>Feb 21</span> <span>Eagles, Shelburne Falls</span></li>
-            <li><span>Mar 21</span> <span>Seven o’s</span></li>
-            <li><span>Mar 27</span> <span>Radio show, Brattleboro</span></li>
-            <li><span>Apr 25</span> <span>VFW Wincher</span></li>
+            <li><span>February 21</span> <span>Eagles, Shelburne Falls</span></li>
+            <li><span>March 21</span> <span>Seven o’s</span></li>
+            <li><span>March 27</span> <span>Radio show, Brattleboro</span></li>
+            <li><span>April 25</span> <span>VFW Wincher</span></li>
             <li><span>May 9</span> <span>Jax on tap</span></li>
-            <li><span>Jul 3</span> <span>Incandescent</span></li>
-            <li><span>Jul 4</span> <span>Rambler’s Club</span></li>
-            <li><span>Sep 5</span> <span>Brattleboro food truck fest</span></li>
-            <li><span>Sep 12</span> <span>Greenfield fairgrounds</span></li>
+            <li><span>July 3</span> <span>Incandescent</span></li>
+            <li><span>July 4</span> <span>Rambler’s Club</span></li>
+            <li><span>September 5</span> <span>Brattleboro food truck fest</span></li>
+            <li><span>September 12</span> <span>Greenfield fairgrounds</span></li>
             <li><span>Oct 17</span> <span>Greenfield fairgrounds</span></li>
-            <li><span>Oct 31</span> <span>Montague Halloween</span></li>
+            <li><span>October 31</span> <span>Montague Halloween</span></li>
         </ul>
     </section>
 
@@ -127,19 +124,22 @@
                 <p><strong>Townies T-Shirt</strong></p>
                 <a href="#" class="listen-btn">Buy Now</a>
             </div>
+            <div class="merch-item"><p>Stickers (Available at shows!)</p></div>
         </div>
     </section>
 
     <section id="signup" class="section-solid">
         <h2>The Signal</h2>
-        <p>Join 200+ local fans.</p>
+        <p>Join 200+ local fans. Get show dates & new tracks straight to your inbox.</p>
         <input type="text" placeholder="Name">
         <input type="email" placeholder="Email">
         <a href="#" class="btn">Join The Signal</a>
     </section>
 
     <footer id="contact">
-        <p>Booking: djarvis1924@gmail.com</p>
+        <h2>Contact / Booking</h2>
+        <p>Let’s work together.</p>
+        <p>📞 +1 413-834-4501 | 📧 djarvis1924@gmail.com</p>
         <p>&copy; 2026 Small Town Radio</p>
     </footer>
 </body>
