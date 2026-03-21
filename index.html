@@ -13,13 +13,21 @@
             line-height: 1.6; text-align: center;
         }
         
-        /* Mobile-first: Keep the image as a header-only background, not body background */
         .hero-bg {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('band.jpg');
             background-size: cover;
-            background-position: center center;
+            background-position: center;
             background-repeat: no-repeat;
             padding: 4rem 1rem;
+        }
+
+        /* Mobile Fix for Background */
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-size: contain; /* Forces image to fit width without cropping */
+                background-position: top center;
+                padding: 2rem 1rem;
+            }
         }
 
         nav { padding: 2rem 0; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(0,0,0,0.8); }
@@ -32,7 +40,7 @@
         .btn { 
             display: inline-block; padding: 0.8rem 2.5rem; background: #fff; color: #000; 
             text-decoration: none; font-weight: 600; text-transform: uppercase;
-            letter-spacing: 0.05em; font-size: 0.9rem; margin-top: 1rem;
+            letter-spacing: 0.05em; font-size: 0.9rem; margin-top: 1rem; border: none;
         }
         
         /* Sections */
