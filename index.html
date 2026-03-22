@@ -3,117 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Small Town Radio | Edgy & Professional</title>
+    <title>Small Town Radio</title>
     <style>
-        :root {
-            --bg: #0a0a0a;
-            --accent: #ffcc00;
-            --text: #ffffff;
-            --muted: #888888;
-        }
-
+        * { box-sizing: border-box; }
         body { 
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
             margin: 0; padding: 0; 
-            background: var(--bg);
-            color: var(--text); 
-            line-height: 1.5;
-            letter-spacing: 0.5px;
+            background: #000;
+            color: #fff; 
+            line-height: 1.5; text-align: center;
         }
 
-        /* Hero: Atmospheric & Edgy */
+        /* Hero Container - Smart Fit for Mobile */
         .hero-container {
             width: 100%;
-            height: 90vh;
+            height: 50vh;
+            position: relative;
             display: flex;
-            align-items: flex-end;
-            justify-content: flex-start;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.9)), url('small_town_radio_logo.jpg');
+            align-items: center;
+            justify-content: center;
+            background-image: url('band.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
-            padding: 4rem;
+            background-repeat: no-repeat;
+            background-color: #000;
         }
         
-        .hero-content { max-width: 800px; }
-        .hero-content h1 { font-size: 5rem; font-weight: 900; text-transform: uppercase; margin: 0; line-height: 1; letter-spacing: -3px; }
-        .hero-content p { font-size: 1.8rem; color: var(--accent); font-weight: 700; margin: 1rem 0; text-transform: uppercase; }
+        .hero-content {
+            padding: 1.5rem;
+            background: rgba(0,0,0,0.5);
+            width: 100%;
+        }
+        .hero-content h2.pre-title { font-size: 0.8rem; letter-spacing: 0.15rem; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .hero-content h1 { font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: 800; }
+        .hero-content p { font-size: 0.85rem; margin-bottom: 1rem; }
         
-        /* Nav: Sharp & Professional */
-        nav { padding: 2rem 4rem; display: flex; gap: 2rem; background: #000; border-bottom: 1px solid #222; }
-        nav a { color: var(--text); text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; transition: color 0.3s; }
-        nav a:hover { color: var(--accent); }
+        .btn { 
+            display: inline-block; padding: 0.6rem 1.2rem; background: #fff; color: #000; 
+            text-decoration: none; font-weight: 600; text-transform: uppercase;
+            font-size: 0.75rem; border: none; cursor: pointer;
+        }
         
-        /* Sections: Dynamic Layout */
-        section { padding: 6rem 4rem; max-width: 1200px; margin: 0 auto; }
-        h2 { font-size: 4rem; font-weight: 900; margin-bottom: 3rem; text-transform: uppercase; color: var(--accent); border-left: 5px solid var(--accent); padding-left: 2rem; }
+        /* Nav */
+        nav { padding: 1rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; background: #000; }
+        nav a { color: #fff; text-decoration: none; margin: 0 0.3rem; }
         
-        .music-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .music-card { background: #151515; padding: 3rem; border: 1px solid #222; transition: transform 0.3s; }
-        .music-card:hover { transform: translateY(-10px); border-color: var(--accent); }
-        .listen-btn { display: inline-block; padding: 1rem 2rem; border: 2px solid var(--accent); color: var(--text); text-decoration: none; font-weight: 900; margin-top: 2rem; transition: 0.3s; }
-        .listen-btn:hover { background: var(--accent); color: #000; }
+        /* Sections */
+        .section-solid { padding: 2rem 1rem; width: 95%; max-width: 800px; margin: 1rem auto; background: #111; border-radius: 4px; border: 1px solid #333; }
+        h2 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5rem; }
         
-        .tour-list { list-style: none; padding: 0; font-size: 1.4rem; font-weight: 600; }
-        .tour-list li { padding: 1.5rem 0; border-bottom: 1px solid #222; display: flex; justify-content: space-between; }
+        /* Music */
+        .music-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+        .music-card { padding: 1.2rem; background: #222; border-radius: 4px; }
+        .listen-btn { display: inline-block; padding: 0.5rem 1rem; border: 1px solid #fff; color: #fff; text-decoration: none; margin-top: 0.5rem; font-size: 0.7rem; text-transform: uppercase; }
         
-        /* Merch & Signup */
-        .merch-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-        .merch-item { background: #151515; padding: 2rem; border: 1px solid #222; text-align: center; }
-        input { background: #222; border: 1px solid #333; padding: 1.5rem; color: #fff; width: 100%; margin-top: 1rem; }
+        /* Merch */
+        .merch-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+        .merch-item { background: #222; padding: 1rem; border-radius: 4px; border: 1px solid #333; }
+        .merch-item img { width: 100%; height: auto; border-radius: 4px; }
+
+        /* Tour */
+        .tour-list { text-align: left; max-width: 100%; margin: 0 auto; list-style: none; padding: 0; font-size: 0.8rem; }
+        .tour-list li { margin: 0.5rem 0; border-bottom: 1px solid #333; padding-bottom: 0.3rem; display: flex; justify-content: space-between; }
         
-        footer { padding: 4rem; border-top: 1px solid #222; text-align: center; color: var(--muted); }
+        input { padding: 0.8rem; width: 90%; max-width: 300px; display: block; margin: 0.5rem auto; border: 1px solid #555; background: #222; color: #fff; }
+        
+        footer { padding: 2rem 1rem; font-size: 0.7rem; color: #888; background: #000; }
     </style>
 </head>
 <body>
     <nav>
-        <a href="#music">Music</a>
-        <a href="#about">Bio</a>
-        <a href="#shows">Shows</a>
-        <a href="#merch">Merch</a>
-        <a href="#contact">Contact</a>
+        <img src="band_photo.jpg" alt="Small Town Radio" style="width: 100%; max-width: 300px; display: block; margin: 0 auto 0.5rem;">
+        Small Town Radio | <a href="#music">Music</a> | <a href="#about">Bio</a> | <a href="#shows">Shows</a> | <a href="#merch">Merch</a> | <a href="#contact">Contact</a>
     </nav>
     
     <div class="hero-container">
         <div class="hero-content">
-            <h1>Small Town Radio</h1>
-            <p>Small Town, BIG Sound.</p>
+            <h2 class="pre-title">Small Town Radio</h2>
+            <h1>Small Town, Small Town, Big Sound.</h1>
+            <p>Classic hits to modern pop—rock-ified with our own twist.</p>
+            <a href="#music" class="btn">Listen Now</a>
         </div>
     </div>
 
-    <section id="band-img" style="padding-bottom: 0;">
-        <img src="band_photo.jpg" alt="Small Town Radio Band" style="width: 100%; border-radius: 20px; border: 2px solid var(--accent);">
+    <section id="about" class="section-solid">
+        <h2>About Us</h2>
+        <p>Small town radio: Your local soundtrack, reimagined.</p>
+        <p>What happens when you take the classic rock you love and fuse it with the pop energy of today? You get Small town radio. Based out of Greenfield, MA, we pride ourselves on a unique approach to live music—taking songs you think you know by heart and giving them a fresh, rock-ified identity.</p>
     </section>
 
-    <section id="music">
-        <h2>Latest Releases</h2>
+    <section id="music" class="section-solid">
+        <h2>Listen</h2>
+        <img src="listen_section.jpg" alt="Small Town Radio Band" style="width: 100%; max-width: 400px; border-radius: 4px; margin-bottom: 1rem;">
         <div class="music-grid">
-            <div class="music-card">
-                <h3>The Classics</h3>
-                <p>Classic hits reimagined with our own rock-ified identity.</p>
-                <a href="YOUR_YOUTUBE_LINK_HERE" class="listen-btn">Watch Video</a>
-            </div>
-            <div class="music-card">
-                <h3>Modern Twist</h3>
-                <p>Modern pop fused with rock energy.</p>
-                <a href="YOUR_YOUTUBE_LINK_HERE" class="listen-btn">Watch Video</a>
-            </div>
-            <div class="music-card">
-                <h3>The Originals</h3>
-                <p>Straight from the heart of Greenfield.</p>
-                <a href="YOUR_YOUTUBE_LINK_HERE" class="listen-btn">Watch Video</a>
-            </div>
+            <div class="music-card"><h3>The Classics</h3><a href="#" class="listen-btn">Listen Now</a></div>
+            <div class="music-card"><h3>Modern Twist</h3><a href="#" class="listen-btn">Listen Now</a></div>
+            <div class="music-card"><h3>The Originals</h3><a href="#" class="listen-btn">Listen Now</a></div>
         </div>
     </section>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p style="font-size: 1.4rem; max-width: 800px; line-height: 1.6;">
-            Based out of Greenfield, MA, we're Small Town Radio—the band that decided the songs you know needed a little extra attitude. We're a group of local musicians who think that if you can't dance to it, it’s probably not worth playing. Whether it's classic rock anthems or modern pop bangers, we treat every song like a long-lost cousin who just crashed the party. We’ve been rocking stages around Greenfield and beyond, bringing that hometown spirit with a twist of electric chaos. We like loud guitars, good company, and occasionally getting the tempo just a *little* too fast. Come catch a show, grab a drink, and let's turn the volume up together.
-        </p>
-    </section>
-
-    <section id="shows">
+    <section id="shows" class="section-solid">
         <h2>Tour Dates</h2>
         <ul class="tour-list">
             <li><span>Feb 21</span> <span>Eagles, Shelburne Falls</span></li>
@@ -130,30 +119,27 @@
         </ul>
     </section>
 
-    <section id="merch">
+    <section id="merch" class="section-solid">
         <h2>Merch</h2>
-        <div class="merch-item">
-            <img src="tshirt.jpg" alt="Townies T-Shirt" style="width: 200px; margin-bottom: 1rem;">
-            <h3>Townies T-Shirt</h3>
-            <a href="#" class="listen-btn">Buy Now</a>
+        <div class="merch-grid">
+            <div class="merch-item">
+                <img src="tshirt.jpg" alt="Townies T-Shirt">
+                <p><strong>Townies T-Shirt</strong></p>
+                <a href="#" class="listen-btn">Buy Now</a>
+            </div>
         </div>
     </section>
 
-    <section id="signup">
+    <section id="signup" class="section-solid">
         <h2>The Signal</h2>
-        <p>Get exclusive access to show dates and merch drops.</p>
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="Your Email">
-        <a href="#" class="listen-btn">Join The Fellowship</a>
+        <p>Join 200+ local fans.</p>
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <a href="#" class="btn">Join</a>
     </section>
 
-    <footer id="contact">
-        <h2>Get In Touch</h2>
-        <p style="font-size: 1.4rem;">Booking / Dan: djarvis1924@gmail.com | 413-555-0123</p>
-        <div style="margin: 2rem 0;">
-            <a href="https://facebook.com" style="color: var(--accent); margin: 0 1rem; font-size: 1.2rem;">FACEBOOK</a>
-            <a href="https://instagram.com" style="color: var(--accent); margin: 0 1rem; font-size: 1.2rem;">INSTAGRAM</a>
-        </div>
+    <footer>
+        <p>Booking: djarvis1924@gmail.com</p>
         <p>&copy; 2026 Small Town Radio</p>
     </footer>
 </body>
